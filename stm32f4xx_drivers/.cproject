@@ -54,7 +54,22 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<folderInfo id="fr.ac6.managedbuild.config.gnu.cross.exe.debug.1513972429.1324134337" name="/" resourcePath="drivers">
+						<toolChain id="fr.ac6.managedbuild.toolchain.gnu.cross.exe.debug.395365382" name="Ac6 STM32 MCU GCC" superClass="fr.ac6.managedbuild.toolchain.gnu.cross.exe.debug" unusedChildren="">
+							<option id="fr.ac6.managedbuild.option.gnu.cross.mcu.1865211620.966537022" name="Mcu" superClass="fr.ac6.managedbuild.option.gnu.cross.mcu.1865211620"/>
+							<option id="fr.ac6.managedbuild.option.gnu.cross.fpu.2115972935.108806774" name="Floating point hardware" superClass="fr.ac6.managedbuild.option.gnu.cross.fpu.2115972935"/>
+							<option id="fr.ac6.managedbuild.option.gnu.cross.floatabi.476776075.1926044903" name="Floating-point ABI" superClass="fr.ac6.managedbuild.option.gnu.cross.floatabi.476776075"/>
+							<option id="fr.ac6.managedbuild.option.gnu.cross.board.1620427686.937145968" name="Board" superClass="fr.ac6.managedbuild.option.gnu.cross.board.1620427686"/>
+							<tool id="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.666159912" name="MCU GCC Compiler" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.compiler.1445411443"/>
+							<tool id="fr.ac6.managedbuild.tool.gnu.cross.cpp.compiler.797141437" name="MCU G++ Compiler" superClass="fr.ac6.managedbuild.tool.gnu.cross.cpp.compiler.31189277"/>
+							<tool id="fr.ac6.managedbuild.tool.gnu.cross.c.linker.1748435066" name="MCU GCC Linker" superClass="fr.ac6.managedbuild.tool.gnu.cross.c.linker.1254442060"/>
+							<tool id="fr.ac6.managedbuild.tool.gnu.cross.cpp.linker.941265799" name="MCU G++ Linker" superClass="fr.ac6.managedbuild.tool.gnu.cross.cpp.linker.1765944019"/>
+							<tool id="fr.ac6.managedbuild.tool.gnu.archiver.68149994" name="MCU GCC Archiver" superClass="fr.ac6.managedbuild.tool.gnu.archiver.1115262033"/>
+							<tool id="fr.ac6.managedbuild.tool.gnu.cross.assembler.698004681" name="MCU GCC Assembler" superClass="fr.ac6.managedbuild.tool.gnu.cross.assembler.2009283931"/>
+						</toolChain>
+					</folderInfo>
 					<sourceEntries>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="drivers"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="startup"/>
 					</sourceEntries>
@@ -136,4 +151,13 @@
 		</scannerConfigBuildInfo>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Debug">
+			<resource resourceType="PROJECT" workspacePath="/stm32f4xx_drivers"/>
+		</configuration>
+		<configuration configurationName="Release">
+			<resource resourceType="PROJECT" workspacePath="/stm32f4xx_drivers"/>
+		</configuration>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 </cproject>
