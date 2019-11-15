@@ -112,8 +112,7 @@ void GPIO_Init(GPIO_Handle_t *pGPIOHandle)
 	if(pGPIOHandle->GPIO_PinConfig.GPIO_PinMode <= GPIO_MODE_ANALOG)
 	{
 		//non-interrupt mode
-		pGPIOHandle->pGPIOx->MODER &= ~(0x3 << (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber)); //bitwise clear register
-		pGPIOHandle->pGPIOx->MODER |= (pGPIOHandle->GPIO_PinConfig.GPIO_PinMode << (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber)); //bitwise set register
+		pGPIOHandle->pGPIOx->MODER = (pGPIOHandle->GPIO_PinConfig.GPIO_PinMode << (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
 	}
 	else
 	{
@@ -121,61 +120,22 @@ void GPIO_Init(GPIO_Handle_t *pGPIOHandle)
 	}
 
 	//2. Configure the speed of GPIO pin
-	pGPIOHandle->pGPIOx->OSPEEDER &= ~(0x3 << (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
-	pGPIOHandle->pGPIOx->OSPEEDER |= (pGPIOHandle->GPIO_PinConfig.GPIO_PinSpeed << (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
+	pGPIOHandle->pGPIOx->OSPEEDER = (pGPIOHandle->GPIO_PinConfig.GPIO_PinSpeed << (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
 
 	//3. Configure the pupd of GPIO pin
-	pGPIOHandle->pGPIOx->PUPDR &= ~(0x3 << (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
-	pGPIOHandle->pGPIOx->PUPDR |= (pGPIOHandle->GPIO_PinConfig.GPIO_PinPuPdControl << (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
+	pGPIOHandle->pGPIOx->PUPDR = (pGPIOHandle->GPIO_PinConfig.GPIO_PinPuPdControl << (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
 
 	//4. Configure the otype of GPIO pin
-	pGPIOHandle->pGPIOx->OTYPER &= ~(0x1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
-	pGPIOHandle->pGPIOx->OTYPER |= (pGPIOHandle->GPIO_PinConfig.GPIO_PinOPType << (pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
+	pGPIOHandle->pGPIOx->OTYPER = (pGPIOHandle->GPIO_PinConfig.GPIO_PinOPType << (pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
 
 	//5. Configure the alternate functionality of GPIO pin
-	if(pGPIOHandle->GPIO_PinConfig.GPIO_PinMode == GPIO_MODE_ALTERNATE)
-	{
-		uint8_t reg_select, reg_shift;
-		reg_select = pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber / 8;
-		reg_shift = pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber % 8;
-		pGPIOHandle->pGPIOx->AFRL[reg_select] &= ~(0xF << (4 * reg_shift));
-		pGPIOHandle->pGPIOx->AFRL[reg_select] |= (pGPIOHandle->GPIO_PinConfig.GPIO_PinAltFunctionMode << (4 * reg_shift));
-	}
+	if((pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber) <= 7)
+	pGPIOHandle->pGPIOx->AFRL = (pGPIOHandle->GPIO_PinConfig.GPIO_PinAltFunctionMode << ())
+
+
 }
 void GPIO_DeInit(GPIO_RegDef_t *pGPIOx)
 {
-	if(pGPIOx == GPIOA)
-	{
-		GPIOA_REG_RESET();
-	}
-	if(pGPIOx == GPIOB)
-	{
-		GPIOB_REG_RESET();
-	}
-	if(pGPIOx == GPIOC)
-	{
-		GPIOC_REG_RESET();
-	}
-	if(pGPIOx == GPIOD)
-	{
-		GPIOD_REG_RESET();
-	}
-	if(pGPIOx == GPIOE)
-	{
-		GPIOE_REG_RESET();
-	}
-	if(pGPIOx == GPIOF)
-	{
-		GPIOF_REG_RESET();
-	}
-	if(pGPIOx == GPIOG)
-	{
-		GPIOG_REG_RESET();
-	}
-	if(pGPIOx == GPIOH)
-	{
-		GPIOH_REG_RESET();
-	}
 
 }
 
