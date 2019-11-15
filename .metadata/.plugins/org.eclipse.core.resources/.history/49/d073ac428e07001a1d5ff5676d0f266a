@@ -272,25 +272,10 @@ void GPIO_WriteOutputPort(GPIO_RegDef_t *pGPIOx, uint16_t Value)
 	pGPIOx->ODR = Value;
 }
 
-
-/******************************************************************************
- * @fn     		-   GPIO_ToggleOutputPin
- *
- * @brief		-	This function toggles output pin between HIGH and LOW
- *
- * @param1		-	Base address of GPIO peripheral
- * @param2		-	Pin number
- *
- * @return		-	none
- *
- * @note  		-	none
- */
 void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber)
 {
-	pGPIOx->ODR ^= (1 << PinNumber);
+
 }
-
-
 
 /*
  * IRQ configuration and ISR handling
