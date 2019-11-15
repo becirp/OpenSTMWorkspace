@@ -1,10 +1,16 @@
-10:57:41 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+11:30:59 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
 make -j4 all 
+Building file: ../src/001_led_toggle.c
 Building file: ../drivers/src/stm32f446xx_gpio.c
 Invoking: MCU GCC Compiler
+Invoking: MCU GCC Compiler
+D:\Documents\GitHub\OpenSTMWorkspace\stm32f4xx_drivers\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DDEBUG -I"D:/Documents/GitHub/OpenSTMWorkspace/stm32f4xx_drivers/drivers/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/001_led_toggle.d" -MT"src/001_led_toggle.o" -o "src/001_led_toggle.o" "../src/001_led_toggle.c"
 D:\Documents\GitHub\OpenSTMWorkspace\stm32f4xx_drivers\Debug
 arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DDEBUG -I"D:/Documents/GitHub/OpenSTMWorkspace/stm32f4xx_drivers/drivers/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"drivers/src/stm32f446xx_gpio.d" -MT"drivers/src/stm32f446xx_gpio.o" -o "drivers/src/stm32f446xx_gpio.o" "../drivers/src/stm32f446xx_gpio.c"
+Finished building: ../src/001_led_toggle.c
 Finished building: ../drivers/src/stm32f446xx_gpio.c
+ 
  
 Building target: stm32f4xx_drivers.elf
 Invoking: MCU GCC Linker
@@ -16,5 +22,5 @@ Generating binary and Printing size information:
 arm-none-eabi-objcopy -O binary "stm32f4xx_drivers.elf" "stm32f4xx_drivers.bin"
 arm-none-eabi-size "stm32f4xx_drivers.elf"
    text	   data	    bss	    dec	    hex	filename
-   1000	   1080	   1092	   3172	    c64	stm32f4xx_drivers.elf
+   1900	   1080	   1092	   4072	    fe8	stm32f4xx_drivers.elf
  
