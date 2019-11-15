@@ -1,29 +1,45 @@
-11:30:59 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
-make -j4 all 
-Building file: ../src/001_led_toggle.c
-Building file: ../drivers/src/stm32f446xx_gpio.c
-Invoking: MCU GCC Compiler
-Invoking: MCU GCC Compiler
-D:\Documents\GitHub\OpenSTMWorkspace\stm32f4xx_drivers\Debug
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DDEBUG -I"D:/Documents/GitHub/OpenSTMWorkspace/stm32f4xx_drivers/drivers/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/001_led_toggle.d" -MT"src/001_led_toggle.o" -o "src/001_led_toggle.o" "../src/001_led_toggle.c"
-D:\Documents\GitHub\OpenSTMWorkspace\stm32f4xx_drivers\Debug
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DDEBUG -I"D:/Documents/GitHub/OpenSTMWorkspace/stm32f4xx_drivers/drivers/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"drivers/src/stm32f446xx_gpio.d" -MT"drivers/src/stm32f446xx_gpio.o" -o "drivers/src/stm32f446xx_gpio.o" "../drivers/src/stm32f446xx_gpio.c"
-Finished building: ../src/001_led_toggle.c
-Finished building: ../drivers/src/stm32f446xx_gpio.c
- 
- 
-Building target: stm32f4xx_drivers.elf
-Invoking: MCU GCC Linker
-arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"D:/Documents/GitHub/OpenSTMWorkspace/stm32f4xx_drivers/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "stm32f4xx_drivers.elf" @"objects.list"   -lm
-Finished building target: stm32f4xx_drivers.elf
- 
-make --no-print-directory post-build
-Generating binary and Printing size information:
-arm-none-eabi-objcopy -O binary "stm32f4xx_drivers.elf" "stm32f4xx_drivers.bin"
-arm-none-eabi-size "stm32f4xx_drivers.elf"
-   text	   data	    bss	    dec	    hex	filename
-   1900	   1080	   1092	   4072	    fe8	stm32f4xx_drivers.elf
- 
+11:36:17 **** Programming project stm32f4xx_drivers on chip ****
+"C:\\Ac6\\SystemWorkbench\\plugins\\fr.ac6.mcu.externaltools.openocd.win32_1.23.0.201904120827\\tools\\openocd\\bin\\openocd.exe" -f stm32.flash.4540330501873404258.cfg -s "D:\\Documents\\GitHub\\OpenSTMWorkspace\\stm32f4xx_drivers" -s "C:\\Ac6\\SystemWorkbench\\plugins\\fr.ac6.mcu.debug_2.5.0.201904120827\\resources\\openocd\\st_scripts" -c "program Debug/stm32f4xx_drivers.elf verify reset " -c shutdown 
+Open On-Chip Debugger 0.10.0+dev-00021-g524e8c8 (2019-04-12-08:48)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+srst_only separate srst_nogate srst_open_drain connect_assert_srst
+Info : The selected transport took over low-level target control. The results might differ compared to plain JTAG/SWD
+adapter speed: 8000 kHz
+adapter_nsrst_delay: 100
+Info : clock speed 8000 kHz
+Info : STLINK v2.1 JTAG v34 API v2 M25 VID 0x0483 PID 0x374B
+Info : using stlink api v2
+Info : Target voltage: 3.260198
+Info : Unable to match requested speed 8000 kHz, using 4000 kHz
+Info : Stlink adapter speed set to 4000 kHz
+Info : STM32F446RETx.cpu: hardware has 6 breakpoints, 4 watchpoints
+Info : Listening on port 3333 for gdb connections
+target halted due to debug-request, current mode: Thread 
+xPSR: 0x01000000 pc: 0x08000598 msp: 0x20020000
+configuring PLL
+Info : Unable to match requested speed 8000 kHz, using 4000 kHz
+Info : Stlink adapter speed set to 4000 kHz
+Info : Unable to match requested speed 8000 kHz, using 4000 kHz
+adapter speed: 4000 kHz
+** Programming Started **
+auto erase enabled
+Info : device id = 0x10006421
+Info : flash size = 512kbytes
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x61000000 pc: 0x20000046 msp: 0x20020000
+wrote 16384 bytes from file Debug/stm32f4xx_drivers.elf in 0.661877s (24.174 KiB/s)
+** Programming Finished **
+** Verify Started **
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x61000000 pc: 0x2000002e msp: 0x20020000
+target halted due to breakpoint, current mode: Thread 
+xPSR: 0x61000000 pc: 0x2000002e msp: 0x20020000
+verified 2980 bytes in 0.193157s (15.066 KiB/s)
+** Verified OK **
+** Resetting Target **
+shutdown command invoked
 
-11:31:00 Build Finished (took 1s.454ms)
+11:36:18 Build Finished (took 1s.254ms)
 
