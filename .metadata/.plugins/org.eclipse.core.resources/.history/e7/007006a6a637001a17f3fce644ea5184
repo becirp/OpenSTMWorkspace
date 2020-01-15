@@ -397,25 +397,9 @@ void GPIO_IRQPriorityCfg(uint8_t IRQNumber, uint8_t IRQPriority)
 }
 
 
-/******************************************************************************
- * @fn     		-   GPIO_IRQHandling
- *
- * @brief		-	This function handles the interrupt. It is called from corresponding overridden weak function that handles interrupt.
- *
- * @param1		-	IRQ number
- * @param2		-	IRQ priority
- *
- * @return		-	none
- *
- * @note  		-	none
- */
 void GPIO_IRQHandling(uint8_t PinNumber)
 {
-	//Clear exti PR register
-	if(EXTI->PR & (1 << PinNumber))
-	{
-		EXTI->PR |= (1 << PinNumber);
-	}
+
 }
 
 

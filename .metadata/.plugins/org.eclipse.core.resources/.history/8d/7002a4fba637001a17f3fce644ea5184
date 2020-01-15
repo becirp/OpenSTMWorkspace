@@ -411,11 +411,7 @@ void GPIO_IRQPriorityCfg(uint8_t IRQNumber, uint8_t IRQPriority)
  */
 void GPIO_IRQHandling(uint8_t PinNumber)
 {
-	//Clear exti PR register
-	if(EXTI->PR & (1 << PinNumber))
-	{
-		EXTI->PR |= (1 << PinNumber);
-	}
+
 }
 
 
