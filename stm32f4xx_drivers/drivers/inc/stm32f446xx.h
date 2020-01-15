@@ -137,6 +137,27 @@ typedef struct
 	__vo uint32_t DCKCFGR2;			    /*!< RCC dedicated clocks configuration register 2, Address offset: 0x94 */
 }RCC_RegDef_t;
 
+typedef struct
+{
+	__vo uint32_t IMR;			 		/*!< Interrupt mask register,               Address offset: 0x00      */
+	__vo uint32_t EMR;			 		/*!< Event mask register,        			Address offset: 0x04      */
+	__vo uint32_t RTSR;			 		/*!< Rising trigger selection register,     Address offset: 0x08      */
+	__vo uint32_t FTSR;			 		/*!< Falling trigger selection register, 	Address offset: 0x0C      */
+	__vo uint32_t SWIER;				/*!< Software interrupt event register,     Address offset: 0x10      */
+	__vo uint32_t PR;					/*!< Pending register,       				Address offset: 0x14      */
+}EXTI_RegDef_t;
+
+typedef struct
+{
+	__vo uint32_t MEMRMP;
+	__vo uint32_t PMC;
+	__vo uint32_t EXTICR1;
+	__vo uint32_t EXTICR2;
+	__vo uint32_t EXTICR3;
+	__vo uint32_t EXTICR4;
+	__vo uint32_t CMPCR;
+	__vo uint32_t CFGR;
+}SYSCFG_RegDef_t;
 
 /*
  * Peripheral definitions -- peripheral base address type casted to RegDef structure
@@ -152,6 +173,10 @@ typedef struct
 #define GPIOH ((GPIO_RegDef_t*)GPIOH_BASEADDR)
 
 #define RCC   ((RCC_RegDef_t*)RCC_BASEADDR)
+
+#define EXTI  ((EXTI_RegDef_t*)EXTI_BASEADDR)
+
+#define SYSCFG	((SYSCFG_RegDef_t*)SYSCFG_BASEADDR)
 
 
 /******************************************************************************/
