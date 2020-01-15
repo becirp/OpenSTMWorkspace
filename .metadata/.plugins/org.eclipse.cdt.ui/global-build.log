@@ -60,3 +60,97 @@ verified 2980 bytes in 0.193157s (15.066 KiB/s)
 ** Verified OK **
 ** Resetting Target **
 shutdown command invoked
+09:32:58 **** Clean-only build of configuration Debug for project stm32f4xx_drivers ****
+make -j4 clean 
+rm -rf *
+ 
+09:32:59 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+make -j4 all 
+Building file: ../startup/startup_stm32.s
+Building file: ../startup/sysmem.c
+Invoking: MCU GCC Assembler
+Building file: ../src/002_led_button.c
+Building file: ../drivers/src/stm32f446xx_gpio.c
+Invoking: MCU GCC Compiler
+D:\Documents\GitHub\OpenSTMWorkspace\stm32f4xx_drivers\Debug
+Invoking: MCU GCC Compiler
+arm-none-eabi-as -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -g -o "startup/startup_stm32.o" "../startup/startup_stm32.s"
+Invoking: MCU GCC Compiler
+D:\Documents\GitHub\OpenSTMWorkspace\stm32f4xx_drivers\Debug
+D:\Documents\GitHub\OpenSTMWorkspace\stm32f4xx_drivers\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DDEBUG -I"D:/Documents/GitHub/OpenSTMWorkspace/stm32f4xx_drivers/drivers/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"startup/sysmem.d" -MT"startup/sysmem.o" -o "startup/sysmem.o" "../startup/sysmem.c"
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DDEBUG -I"D:/Documents/GitHub/OpenSTMWorkspace/stm32f4xx_drivers/drivers/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/002_led_button.d" -MT"src/002_led_button.o" -o "src/002_led_button.o" "../src/002_led_button.c"
+D:\Documents\GitHub\OpenSTMWorkspace\stm32f4xx_drivers\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DDEBUG -I"D:/Documents/GitHub/OpenSTMWorkspace/stm32f4xx_drivers/drivers/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"drivers/src/stm32f446xx_gpio.d" -MT"drivers/src/stm32f446xx_gpio.o" -o "drivers/src/stm32f446xx_gpio.o" "../drivers/src/stm32f446xx_gpio.c"
+Finished building: ../startup/startup_stm32.s
+ 
+Finished building: ../src/002_led_button.c
+Finished building: ../drivers/src/stm32f446xx_gpio.c
+Finished building: ../startup/sysmem.c
+ 
+ 
+ 
+Building target: stm32f4xx_drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"D:/Documents/GitHub/OpenSTMWorkspace/stm32f4xx_drivers/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "stm32f4xx_drivers.elf" @"objects.list"   -lm
+Finished building target: stm32f4xx_drivers.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "stm32f4xx_drivers.elf" "stm32f4xx_drivers.bin"
+arm-none-eabi-size "stm32f4xx_drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2196	   1080	   1092	   4368	   1110	stm32f4xx_drivers.elf
+ 
+09:33:09 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+make -j4 all 
+Building file: ../src/002_led_button.c
+Building file: ../drivers/src/stm32f446xx_gpio.c
+Invoking: MCU GCC Compiler
+Invoking: MCU GCC Compiler
+D:\Documents\GitHub\OpenSTMWorkspace\stm32f4xx_drivers\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DDEBUG -I"D:/Documents/GitHub/OpenSTMWorkspace/stm32f4xx_drivers/drivers/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/002_led_button.d" -MT"src/002_led_button.o" -o "src/002_led_button.o" "../src/002_led_button.c"
+D:\Documents\GitHub\OpenSTMWorkspace\stm32f4xx_drivers\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DDEBUG -I"D:/Documents/GitHub/OpenSTMWorkspace/stm32f4xx_drivers/drivers/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"drivers/src/stm32f446xx_gpio.d" -MT"drivers/src/stm32f446xx_gpio.o" -o "drivers/src/stm32f446xx_gpio.o" "../drivers/src/stm32f446xx_gpio.c"
+Finished building: ../src/002_led_button.c
+ 
+Finished building: ../drivers/src/stm32f446xx_gpio.c
+ 
+Building target: stm32f4xx_drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"D:/Documents/GitHub/OpenSTMWorkspace/stm32f4xx_drivers/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "stm32f4xx_drivers.elf" @"objects.list"   -lm
+Finished building target: stm32f4xx_drivers.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "stm32f4xx_drivers.elf" "stm32f4xx_drivers.bin"
+arm-none-eabi-size "stm32f4xx_drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2196	   1080	   1092	   4368	   1110	stm32f4xx_drivers.elf
+ 
+09:35:03 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+make -j4 all 
+Building file: ../src/002_led_button.c
+Building file: ../drivers/src/stm32f446xx_gpio.c
+Invoking: MCU GCC Compiler
+Invoking: MCU GCC Compiler
+D:\Documents\GitHub\OpenSTMWorkspace\stm32f4xx_drivers\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DDEBUG -I"D:/Documents/GitHub/OpenSTMWorkspace/stm32f4xx_drivers/drivers/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/002_led_button.d" -MT"src/002_led_button.o" -o "src/002_led_button.o" "../src/002_led_button.c"
+D:\Documents\GitHub\OpenSTMWorkspace\stm32f4xx_drivers\Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DDEBUG -I"D:/Documents/GitHub/OpenSTMWorkspace/stm32f4xx_drivers/drivers/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"drivers/src/stm32f446xx_gpio.d" -MT"drivers/src/stm32f446xx_gpio.o" -o "drivers/src/stm32f446xx_gpio.o" "../drivers/src/stm32f446xx_gpio.c"
+Finished building: ../src/002_led_button.c
+Finished building: ../drivers/src/stm32f446xx_gpio.c
+ 
+ 
+Building target: stm32f4xx_drivers.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"D:/Documents/GitHub/OpenSTMWorkspace/stm32f4xx_drivers/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "stm32f4xx_drivers.elf" @"objects.list"   -lm
+Finished building target: stm32f4xx_drivers.elf
+ 
+make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "stm32f4xx_drivers.elf" "stm32f4xx_drivers.bin"
+arm-none-eabi-size "stm32f4xx_drivers.elf"
+   text	   data	    bss	    dec	    hex	filename
+   2196	   1080	   1092	   4368	   1110	stm32f4xx_drivers.elf
+ 

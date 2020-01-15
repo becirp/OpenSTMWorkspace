@@ -150,12 +150,12 @@ typedef struct
 typedef struct
 {
 	__vo uint32_t MEMRMP;				/*!< Memory remap register,              	Address offset: 0x00      */
-	__vo uint32_t PMC;				/*!< Peripheral mode configuration register,	Address offset: 0x00      */
-	__vo uint32_t EXTICR[4];		/*!< external interrupt configuration register,	Address offset: 0x00      */
+	__vo uint32_t PMC;					/*!< Memory remap register,              	Address offset: 0x00      */
+	__vo uint32_t EXTICR[4];
 	uint32_t 	  RESERVED1[2];
-	__vo uint32_t CMPCR;				/*!< Compensation cell control register,    Address offset: 0x00      */
+	__vo uint32_t CMPCR;
 	uint32_t      RESERVED2[2];
-	__vo uint32_t CFGR;					/*!< configuration register,              	Address offset: 0x00      */
+	__vo uint32_t CFGR;
 }SYSCFG_RegDef_t;
 
 /*
